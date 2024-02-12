@@ -16,7 +16,7 @@ const Header = () => {
 				<button className="cursor-pointer" onClick={() => toggleMenuHandler()}>
 					<RxHamburgerMenu fontSize={"28px"} />
 				</button>
-				<a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+				<a href="/">
 					<img
 						className="w-28 h-16"
 						src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"

@@ -17,18 +17,18 @@ const Sidebar = () => {
 	if (!isMenuOpen) return null; //early return
 	return (
 		<div className="p-5 shadow-md w-2/12">
-			<ul className="flex flex-col gap-3 pb-14">
+			<ul className="flex flex-col gap-4 pb-14">
 				<Link to="/">
-					<li className=" bg-[#222222] rounded-xl px-2 py-1 flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+					<li className=" bg-[#222222] rounded-xl px-2 py-1 flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 						<IoHomeSharp />
 						Home
 					</li>
 				</Link>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<SiYoutubeshorts />
 					Shorts
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<MdOutlineSubscriptions />
 					Subscriptions
 				</li>
@@ -37,35 +37,35 @@ const Sidebar = () => {
 				Explore
 			</h2>
 			<ul className="flex flex-col gap-6">
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<IoMusicalNotesSharp />
 					Music
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<GrTechnology />
 					Technology
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<FaPodcast />
 					Podcast
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<IoNewspaper />
 					News
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<MdMovieEdit />
 					Movies
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<MdSportsCricket />
 					Sports
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<SiCodingninjas />
 					Coding
 				</li>
-				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-300">
+				<li className="flex items-center gap-2 text-[17px] font-sans hover:bg-[#222222] hover:rounded-xl hover:px-2 hover:py-1 transition-all duration-100">
 					<SiYoutubegaming />
 					Gaming
 				</li>

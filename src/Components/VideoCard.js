@@ -6,7 +6,7 @@ const VideoCard = ({ videoInfo }) => {
 	return (
 		<div className="p-2 m-2 w-72 shadow-md cursor-pointer">
 			<img
-				className="rounded-lg"
+				className="rounded-lg w-full"
 				src={thumbnails?.medium?.url}
 				alt="thumbnail"
 			/>
@@ -15,6 +15,13 @@ const VideoCard = ({ videoInfo }) => {
 				<li>{channelTitle}</li>
 				<li>{statistics?.viewCount} views</li>
 			</ul>
+		</div>
+	);
+};
+export const AdVideoCard = ({ videoInfo }) => {
+	return (
+		<div className="w-72 shadow-md cursor-pointer border-2 border-white flex flex-col items-center">
+			<VideoCard videoInfo={videoInfo} />
 		</div>
 	);
 };

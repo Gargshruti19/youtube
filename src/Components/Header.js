@@ -3,21 +3,30 @@ import React, { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../Utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../Utils/constants";
 import { PiClockCounterClockwise } from "react-icons/pi";
+import { cacheResults } from "../Utils/searchSlice";
 const Header = () => {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
 	const [showSuggestions, setShowSuggestions] = useState(false);
+	const searchCache = useSelector((store) => store.search);
 	const dispatch = useDispatch();
+
 	useEffect(() => {
 		//make an api call after each key press
 		// but if the difference btw 2 api calls is <200ms
 		// decline the call
 
-		const timer = setTimeout(() => getSearchSuggestions(), 200);
+		const timer = setTimeout(() => {
+			if (searchCache[searchQuery]) {
+				setSuggestions(searchCache[searchQuery]);
+			} else {
+				getSearchSuggestions();
+			}
+		}, 200);
 
 		return () => {
 			clearTimeout(timer);
@@ -28,6 +37,12 @@ const Header = () => {
 		const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
 		const json = await data.json();
 		setSuggestions(json[1]);
+
+		dispatch(
+			cacheResults({
+				[searchQuery]: json[1],
+			})
+		);
 	};
 
 	const toggleMenuHandler = () => {

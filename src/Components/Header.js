@@ -9,6 +9,8 @@ import { YOUTUBE_SEARCH_API } from "../Utils/constants";
 import { PiClockCounterClockwise } from "react-icons/pi";
 const Header = () => {
 	const [searchQuery, setSearchQuery] = useState("");
+	const [suggestions, setSuggestions] = useState([]);
+	const [showSuggestions, setShowSuggestions] = useState(false);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		//make an api call after each key press
@@ -25,7 +27,7 @@ const Header = () => {
 	const getSearchSuggestions = async () => {
 		const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
 		const json = await data.json();
-		console.log(json[1]);
+		setSuggestions(json[1]);
 	};
 
 	const toggleMenuHandler = () => {
@@ -55,47 +57,28 @@ const Header = () => {
 						placeholder="Search..."
 						value={searchQuery}
 						onChange={(e) => setSearchQuery(e.target.value)}
+						onFocus={() => setShowSuggestions(true)}
+						onBlur={() => setShowSuggestions(false)}
 					/>
 					<button className="bg-[#222222] px-5 py-2 rounded-e-full border border-gray-300 border-opacity-50 text-gra-500">
 						<IoSearch fontSize={"20px"} />
 					</button>
 				</div>
-				<div className="fixed ml-[212px] bg-[#222222] w-[27.5rem] rounded-lg shadow-lg py-5">
-					<ul className="flex flex-col gap-3 w-[27.5rem] px-2">
-						<li className=" py-1 flex items-center gap-4 text-[15px] hover:bg-[#383838]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-						<li className="flex items-center gap-4 text-[15px]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-						<li className="flex items-center gap-4 text-[15px]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-						<li className="flex items-center gap-4 text-[15px]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-						<li className="flex items-center gap-4 text-[15px]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-						<li className="flex items-center gap-4 text-[15px]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-						<li className="flex items-center gap-4 text-[15px]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-						<li className="flex items-center gap-4 text-[15px]">
-							<PiClockCounterClockwise fontSize={"20px"} />
-							Iphone
-						</li>
-					</ul>
-				</div>
+				{showSuggestions && (
+					<div className="absolute ml-[212px] bg-[#222222] w-[27.5rem] rounded-lg shadow-lg">
+						<ul className="flex flex-col gap-3 w-[27.5rem] px-2">
+							{suggestions.map((s) => (
+								<li
+									key={s}
+									className=" py-1 flex items-center gap-4 text-[15px] hover:bg-[#383838] font-sans"
+								>
+									<PiClockCounterClockwise fontSize={"20px"} />
+									{s}
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
 			</div>
 			<div className="col-span-1 text-gray-400 cursor-pointer">
 				<FaRegUserCircle fontSize={"28px"} />

@@ -20,15 +20,15 @@ const LiveChat = () => {
 					message: randomMessage(20) + " 🚀",
 				})
 			);
-		}, 2000);
+		}, 1500);
 		return () => {
 			clearInterval(i);
 		};
 	}, []);
 	return (
 		<>
-			<div className="m-2 p-2 border border-white w-full h-[450px] rounded-2xl overflow-y-scroll hidden-scrollbar flex flex-col-reverse">
-				<div>
+			<div className="m-2 p-2 border border-white w-full h-[450px] rounded-2xl overflow-y-scroll hidden-scrollbar">
+				<div className=" flex flex-col-reverse">
 					{chatMessages.map((msg, index) => (
 						<ChatMessage key={index} name={msg.name} message={msg.message} />
 					))}

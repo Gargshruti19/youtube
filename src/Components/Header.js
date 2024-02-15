@@ -49,7 +49,7 @@ const Header = () => {
 		dispatch(toggleMenu());
 	};
 	return (
-		<div className="grid grid-flow-col p-2 shadow-lg items-center">
+		<div className="grid grid-flow-col p-2 shadow-white shadow-sm items-center">
 			<div className="flex items-center gap-3 col-span-1 text-gray-500 ml-6">
 				<button className="cursor-pointer" onClick={() => toggleMenuHandler()}>
 					<RxHamburgerMenu fontSize={"24px"} />

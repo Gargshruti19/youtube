@@ -5,7 +5,6 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../Utils/appSlice";
-import { YOUTUBE_SEARCH_API } from "../Utils/constants";
 import { PiClockCounterClockwise } from "react-icons/pi";
 import { cacheResults } from "../Utils/searchSlice";
 const Header = () => {
@@ -44,7 +43,6 @@ const Header = () => {
 			})
 		);
 	};
-
 	const toggleMenuHandler = () => {
 		dispatch(toggleMenu());
 	};
@@ -75,7 +73,7 @@ const Header = () => {
 						onFocus={() => setShowSuggestions(true)}
 						onBlur={() => setShowSuggestions(false)}
 					/>
-					<button className="bg-[#222222] px-5 py-2 rounded-e-full border border-gray-300 border-opacity-50 text-gra-500">
+					<button className="bg-[#222222] px-5 py-2 rounded-e-full border border-gray-300 border-opacity-50 text-gray-500">
 						<IoSearch fontSize={"20px"} />
 					</button>
 				</div>

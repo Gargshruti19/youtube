@@ -33,7 +33,7 @@ const WatchPage = () => {
 					></iframe>
 				</div>
 				<div className="w-full">
-					<LiveChat/>
+					<LiveChat />
 				</div>
 			</div>
 			<CommentsContainer />

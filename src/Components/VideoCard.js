@@ -18,12 +18,5 @@ const VideoCard = ({ videoInfo }) => {
 		</div>
 	);
 };
-export const AdVideoCard = ({ videoInfo }) => {
-	return (
-		<div className="w-72 shadow-md cursor-pointer border-2 border-white flex flex-col items-center">
-			<VideoCard videoInfo={videoInfo} />
-		</div>
-	);
-};
 
 export default VideoCard;

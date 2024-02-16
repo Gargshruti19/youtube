@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../Utils/appSlice";
 import { PiClockCounterClockwise } from "react-icons/pi";
 import { cacheResults } from "../Utils/searchSlice";
+import { YOUTUBE_SEARCH_API } from "../Utils/constants";
 const Header = () => {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
